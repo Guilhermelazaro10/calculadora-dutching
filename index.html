@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aposta Sem Risco - Calculadora de Dutching</title>
+
+  <link rel="icon" href="aposta_sem_risco_favicon.png" type="image/png"> 
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* Variáveis CSS para o tema claro (padrão) */
+    :root {
+        /* NOVA PALETA: Fundo suave e claro */
+        --body-bg-start: #f5f5f5; 
+        --body-bg-end: #ffffff; 
+        --card-bg: #ffffff;
+        --text-color-primary: #333333; 
+        --text-color-secondary: #555555; 
+        --heading-color: #333333; 
+        
+        --button-primary-bg: #28a745; 
+        --button-primary-border: #28a745;
+        --button-primary-text: white;
+        
+        --button-secondary-bg: #dc3545; 
+        --button-secondary-border: #dc3545;
+        --button-secondary-text: white;
+        
+        --button-highlight-bg: #b8860b; /* Ouro queimado */
+        --button-highlight-border: #8b6508;
+        --button-highlight-text: white;
+
+        --table-header-bg: #495057; 
+        --table-header-text: white;
+        
+        --badge-success-bg: #28a745; 
+        --badge-danger-bg: #dc3545; 
+        --badge-secondary-bg: #6c757d; 
+        
+        --input-bg: white;
+        --input-border: #ced4da;
+        --input-text-addon-bg: #e9ecef;
+        --input-text-addon-border: #ced4da;
+        
+        --copy-btn-color: #007bff;
+        --info-badge-bg: #007bff;
+        --info-link-color: #007bff;
+    }
+
+    /* Variáveis CSS para o tema escuro */
+    .dark-theme {
+        --body-bg-start: #2c3e50; 
+        --body-bg-end: #34495e; 
+        --card-bg: #3d566e; 
+        --text-color-primary: #ecf0f1; 
+        --text-color-secondary: #bdc3c7; 
+        --heading-color: #ecf0f1;
+        
+        --button-primary-bg: #2ecc71; 
+        --button-primary-border: #2ecc71;
+        --button-primary-text: white;
+        
+        --button-secondary-bg: #c0392b; 
+        --button-secondary-border: #c0392b;
+        --button-secondary-text: white;
+        
+        --button-highlight-bg: #f1c40f; 
+        --button-highlight-border: #f39c12;
+        --button-highlight-text: #2c3e50; 
+
+        --table-header-bg: #2c3e50; 
+        --table-header-text: white;
+        
+        --badge-success-bg: #27ae60;
+        --badge-danger-bg: #e74c3c;
+        --badge-secondary-bg: #7f8c8d;
+        
+        --input-bg: #5a758e; 
+        --input-border: #6d879e;
+        --input-text-addon-bg: #4a627a;
+        --input-text-addon-border: #5a758e;
+        
+        --copy-btn-color: #85c1e9;
+        --info-badge-bg: #5a758e;
+        --info-link-color: #85c1e9;
+    }
+
+    body {
+      background: linear-gradient(to right, var(--body-bg-start), var(--body-bg-end)) !important; 
+      font-family: 'Roboto', sans-serif !important; 
+      display: block;
+      min-height: 100vh;
+      padding: 0;
+      color: var(--text-color-primary) !important; 
+    }
+    .container-custom {
+        background-color: var(--card-bg) !important;
+        border-radius: 1rem !important;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
+        padding: 2rem !important;
+        width: 95% !important;
+        margin: 2rem auto !important;
+        max-width: 960px !important;
+    }
+    h1 {
+      font-family: 'Lato', sans-serif !important; 
+      color: var(--heading-color) !important; 
+      font-weight: bold !important;
+    }
+    .logo-display { 
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .logo-display img {
+        max-width: 100%;
+        height: auto;
+        max-height: 120px; /* AUMENTADO O TAMANHO DA LOGO AQUI */ 
+        display: inline-block; 
+        margin: 0 auto; 
+    }
+
+    #lucroDisplay, #retornoTotalDisplay {
+        font-size: 1.1rem !important;
+        font-weight: bold !important;
+        padding: 0.5rem 0.8rem !important;
+        border-radius: 0.3rem !important;
+        display: inline-block !important;
+    }
+    #lucroDisplay.bg-success-custom {
+        background-color: var(--badge-success-bg) !important; 
+        color: white !important;
+    }
+    #lucroDisplay.bg-danger-custom {
+        background-color: var(--badge-danger-bg) !important; 
+        color: white !important;
+    }
+    #retornoTotalDisplay.bg-secondary-custom {
+        background-color: var(--badge-secondary-bg) !important;
+        color: white !important;
+    }
+    .table-dark th {
+        background-color: var(--table-header-bg) !important; 
+        color: var(--table-header-text) !important;
+        text-align: center !important;
+    }
+    .table-responsive {
+        margin-top: 1.5rem !important;
+    }
+    .input-group-text {
+        background-color: var(--input-text-addon-bg) !important;
+        border: 1px solid var(--input-text-addon-border) !important;
+        color: var(--text-color-primary) !important; 
+    }
+    .form-control { 
+        background-color: var(--input-bg) !important;
+        border: 1px solid var(--input-border) !important;
+        color: var(--text-color-primary) !important; 
+    }
+    .odd-input {
+        text-align: center !important;
+    }
+    .badge-secondary-custom {
+        background-color: var(--badge-secondary-bg) !important; 
+        color: var(--text-color-primary) !important; 
+    }
+    .copy-btn {
+        margin-left: 5px !important;
+        text-decoration: none !important;
+        font-weight: bold !important;
+        font-size: 0.75rem !important;
+        color: var(--copy-btn-color) !important;
+    }
+    .btn-primary { 
+        background-color: var(--button-primary-bg) !important; 
+        border-color: var(--button-primary-border) !important;
+        color: var(--button-primary-text) !important;
+        font-weight: bold !important;
+    }
+    .btn-warning-custom {
+        background-color: var(--button-secondary-bg) !important; 
+        color: var(--button-secondary-text) !important; 
+        font-weight: bold !important;
+    }
+    .value-cell-content {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 100% !important;
+        padding: 0 !important;
+    }
+    .value-cell-content .badge {
+        margin-right: 5px !important;
+    }
+    .info-section h5 .badge {
+        background-color: var(--info-badge-bg) !important; 
+        color: white !important;
+    }
+    .info-section p {
+        margin-bottom: 0.5rem !important;
+        color: var(--text-color-secondary) !important; 
+    }
+    .info-section a {
+        color: var(--info-link-color) !important; 
+    }
+
+    /* Estilos do botão de tema */
+    .theme-toggle-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--text-color-primary); 
+        z-index: 10;
+        transition: color 0.3s ease;
+    }
+    .theme-toggle-btn:hover {
+        color: var(--button-highlight-bg); 
+    }
+
+    /* Ajustes para telas menores */
+    @media (max-width: 768px) { 
+        .container-custom {
+            width: 95% !important;
+            padding: 1rem !important;
+            margin: 1rem auto !important;
+        }
+    }
+    @media (max-width: 576px) { 
+        .container-custom {
+            padding: 0.75rem !important;
+        }
+        .odd-label {
+            display: none !important; 
+        }
+        .theme-toggle-btn { 
+            top: 10px;
+            right: 10px;
+            font-size: 1.2rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="container-custom">
+    <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fas fa-moon"></i> </button>
+
+    <div class="logo-display">
+        <img src="aposta_sem_risco_favicon.png" alt="Logo Gol de Bet - Aposta Sem Risco">
+    </div>
+
+    <h1 class="text-3xl text-center mb-6">Aposta Sem Risco</h1> <div class="mb-3">
+        <strong>Investimento:</strong>
+        <div class="input-group">
+            <span class="input-group-text">R$</span>
+            <input type="text" id="valorTotal" placeholder="0,00" class="form-control" onkeyup="handleStakeInput(this)" onblur="formatStakeOnBlur(this)" value="" />
+        </div>
+    </div>
+
+    <div class="row mb-3 text-center">
+        <div class="col-6">
+            <strong>Lucro:</strong> <span id="lucroDisplay" class="badge bg-success-custom">R$ 0,00</span>
+        </div>
+        <div class="col-6">
+            <strong>Retorno:</strong> <span id="retornoTotalDisplay" class="badge bg-secondary-custom">R$ 0,00</span>
+        </div>
+    </div>
+
+    <table class="table table-responsive table-sm table-borderless table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th style="text-align: center;">Odds</th>
+                <th style="text-align: center;">Investimento</th>
+                <th style="text-align: center;">Retorno</th>
+            </tr>
+        </thead>
+        <tbody id="oddsTableBody">
+            </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-center">
+                    <button id="adicionarLinhaBtn" type="button" class="btn btn-primary btn-sm w-100 mt-3 mb-2" onclick="adicionarLinha()">Adicionar Mais Linhas</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button type="button" onclick="reiniciar()" class="btn btn-warning-custom btn-sm w-100 mt-2">Reiniciar Calculadora</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="info-section">
+                    <h5><span class="badge bg-primary">Legenda:</span></h5>
+                    <p><strong>Investimento:</strong> valor total a distribuir nas apostas.</p>
+                    <p><strong>Lucro:</strong> cálculo retorno do investimento total subtraído do valor da aposta.</p>
+                    <p><strong>Retorno:</strong> ganhos se qualquer uma das apostas for vencedora.</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="info-section">
+                    <h5><span class="badge bg-primary">O que é Dutching:</span></h5>
+                    <p>Dutching é o compartilhamento do risco entre várias apostas. É preciso calcular a aposta correta a ser colocada em cada seleção, para que o retorno seja o mesmo se alguma delas for vencedora.</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="info-section">
+                    <h5><span class="badge bg-primary">O que é ODD:</span></h5>
+                    <p>ODD é o valor pago no evento em que você apostou. Quanto maior a probabilidade de um resultado acontecer, menor será o preço que as bookies irão te pagar e consequentemente o retorno será baixo também. Assim como, quanto menos provável o resultado, maior será a odd do evento.</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="info-section">
+                    <h5><span class="badge bg-primary">Contato:</span></h5>
+                    <p>Para sugestões, parcerias ou publicidade, entre em contato pelo e-mail: <a href="mailto:contato@calculadoradedutching.com">contato@calculadoradedutching.com</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="info-section">
+                    <h5><span class="badge bg-primary">Ajude a manter este projeto vivo. Obrigado!</span></h5>
+                    <p><a href="https://www.paypal.com/donate?business=USGCRZHJ8X3DG&amp;currency_code=BRL" target="_blank"><strong>Doar via PayPal</strong></a></p>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+  </div>
+
+  <script>
+    // Formatador para moeda Real (BRL)
+    const currencyFormatter = new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    // Função para formatar números para exibição como moeda (com vírgula para decimal)
+    function formatToBRL(value) {
+      if (isNaN(value)) {
+        return "R$ 0,00";
+      }
+      return currencyFormatter.format(value);
+    }
+
+    // Limpa valor de MOEDA (Investimento) para cálculo
+    // Remove R$, espaços, PONTOS DE MILHAR, e substitui vírgula por ponto decimal.
+    function cleanCurrencyValue(value) {
+      return String(value)
+        .replace(/[R$ ]/g, '')   // Remove R$ e espaços
+        .replace(/\./g, '')     // Remove PONTOS DE MILHAR (ex: 1.000,00 -> 1000,00)
+        .replace(/,/g, '.');    // Substitui VÍRGULA por PONTO DECIMAL (ex: 1000,00 -> 1000.00)
+    }
+
+    // Limpa valor DECIMAL (Odds) para cálculo
+    // Apenas substitui vírgula por ponto decimal. NÃO remove pontos existentes.
+    function cleanDecimalValue(value) {
+        return String(value).replace(/,/g, '.'); 
+    }
+
+    // --- Funções de tratamento de input para Odds ---
+    function handleOddInput(inputElement) {
+      inputElement.value = inputElement.value.replace(",", "."); 
+      calcularDutching();
+    }
+
+    function formatOddOnBlur(inputElement) {
+        let value = inputElement.value;
+        value = cleanDecimalValue(value); 
+
+        let parsedValue = parseFloat(value);
+        if (value === "" || isNaN(parsedValue)) {
+            inputElement.value = ""; 
+        } else {
+            inputElement.value = parsedValue.toFixed(2); 
+        }
+        calcularDutching();
+    }
+
+    // --- Funções de tratamento de input para Valor Total ---
+    function handleStakeInput(inputElement) {
+      inputElement.value = inputElement.value.replace(",", ".");
+      calcularDutching();
+    }
+
+    function formatStakeOnBlur(inputElement) {
+        let value = cleanCurrencyValue(inputElement.value);
+        let parsedValue = parseFloat(value);
+
+        if (value !== "" && !isNaN(parsedValue)) {
+            inputElement.value = formatToBRL(parsedValue); 
+        } else {
+            inputElement.value = "";
+        }
+        calcularDutching();
+    }
+
+    // --- Função principal de Cálculo ---
+    function calcularDutching() {
+      const valorTotalInput = document.getElementById("valorTotal");
+      const stakeString = cleanCurrencyValue(valorTotalInput.value);
+      const stake = parseFloat(stakeString);
+
+      const oddsInputs = Array.from(document.querySelectorAll(".odd-input"));
+      const odds = oddsInputs
+        .map(input => {
+            const cleanOdd = cleanDecimalValue(input.value); 
+            const floatOdd = parseFloat(cleanOdd);
+            return floatOdd;
+        })
+        .filter(o => !isNaN(o) && o > 0);
+
+      const lucroTotalDisplay = document.getElementById("lucroDisplay");
+      const retornoTotalDisplay = document.getElementById("retornoTotalDisplay");
+
+      if (lucroTotalDisplay) lucroTotalDisplay.textContent = formatToBRL(0);
+      if (retornoTotalDisplay) retornoTotalDisplay.textContent = formatToBRL(0);
+
+      oddsInputs.forEach((input) => {
+        const oddIndex = input.dataset.oddIndex;
+        if (oddIndex) {
+            const apostaSpan = document.getElementById(`aposta-${oddIndex}`);
+            const retornoSpan = document.getElementById(`retorno-${oddIndex}`);
+            if (apostaSpan) apostaSpan.textContent = '';
+            if (retornoSpan) retornoSpan.textContent = '';
+        }
+      });
+
+
+      if (isNaN(stake) || stake <= 0 || odds.length < 2) {
+        if (lucroTotalDisplay) {
+            lucroTotalDisplay.classList.remove('bg-danger-custom');
+            lucroTotalDisplay.classList.add('bg-success-custom');
+        }
+        return;
+      }
+
+      const inversos = odds.map(o => 1 / o);
+      const somaInversos = inversos.reduce((a, b) => a + b, 0);
+
+      if (somaInversos === 0 || isNaN(somaInversos)) {
+        if (lucroTotalDisplay) {
+            lucroTotalDisplay.classList.remove('bg-danger-custom');
+            lucroTotalDisplay.classList.add('bg-success-custom');
+        }
+        return;
+      }
+
+      let menorLucro = Infinity; 
+
+      odds.forEach((o, i) => {
+        const proporcao = inversos[i] / somaInversos;
+        let aposta = stake * proporcao;
+        let retornoBruto = aposta * o;
+
+        aposta = parseFloat(aposta.toFixed(2));
+        retornoBruto = parseFloat(retornoBruto.toFixed(2));
+        
+        const lucroCalculado = retornoBruto - stake;
+
+        if (lucroCalculado < menorLucro) {
+            menorLucro = lucroCalculado;
+        }
+
+        const oddIndex = oddsInputs[i].dataset.oddIndex;
+        if (oddIndex) {
+            const apostaSpan = document.getElementById(`aposta-${oddIndex}`);
+            const retornoSpan = document.getElementById(`retorno-${oddIndex}`);
+
+            if (apostaSpan) apostaSpan.textContent = formatToBRL(aposta);
+            if (retornoSpan) retornoSpan.textContent = formatToBRL(retornoBruto);
+        }
+      });
+
+      if (menorLucro !== Infinity) {
+          if (lucroTotalDisplay) {
+              lucroTotalDisplay.textContent = formatToBRL(menorLucro);
+              if (menorLucro < 0) {
+                  lucroTotalDisplay.classList.remove('bg-success-custom');
+                  lucroTotalDisplay.classList.add('bg-danger-custom');
+              } else {
+                  lucroTotalDisplay.classList.remove('bg-danger-custom');
+                  lucroTotalDisplay.classList.add('bg-success-custom');
+              }
+          }
+          if (retornoTotalDisplay) retornoTotalDisplay.textContent = formatToBRL(stake + menorLucro);
+      }
+    }
+
+    // --- Funções de Ação ---
+    let currentOddIndex = 0; 
+
+    function criarLinhaOdd(index, value = "") {
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+            <td class="align-middle">
+                <div class="input-group">
+                    <span class="input-group-text odd-label">${index}º</span>
+                    <input type="text" placeholder="Odd" class="form-control odd-input" data-odd-index="${index}" onkeyup="handleOddInput(this)" onblur="formatOddOnBlur(this)" value="${value}" />
+                </div>
+            </td>
+            <td class="align-middle" style="text-align: center; padding: 0;">
+                <div class="value-cell-content">
+                    <span id="aposta-${index}" class="badge badge-secondary-custom"></span>
+                    <a href="#" onclick="copyValue('aposta-${index}'); return false;" class="copy-btn">copiar</a>
+                </div>
+            </td>
+            <td class="align-middle" style="text-align: center; padding: 0;">
+                <div class="value-cell-content">
+                    <span id="retorno-${index}" class="badge badge-secondary-custom"></span>
+                </div>
+            </td>
+        `;
+        return newRow;
+    }
+
+    function adicionarLinha() {
+      currentOddIndex++; 
+      const tableBody = document.getElementById("oddsTableBody");
+      tableBody.appendChild(criarLinhaOdd(currentOddIndex));
+      calcularDutching();
+    }
+
+    function reiniciar() {
+      const tableBody = document.getElementById("oddsTableBody");
+      tableBody.innerHTML = ''; 
+      currentOddIndex = 0;
+
+      adicionarLinha(); 
+      adicionarLinha(); 
+
+      document.getElementById("valorTotal").value = ""; 
+      formatStakeOnBlur(document.getElementById("valorTotal")); 
+
+      const lucroTotalDisplay = document.getElementById("lucroDisplay");
+      const retornoTotalDisplay = document.getElementById("retornoTotalDisplay");
+      if (lucroTotalDisplay) lucroTotalDisplay.textContent = formatToBRL(0);
+      if (retornoTotalDisplay) retornoTotalDisplay.textContent = formatToBRL(0);
+
+      if (lucroTotalDisplay) {
+          lucroTotalDisplay.classList.remove('bg-danger-custom');
+          lucroTotalDisplay.classList.add('bg-success-custom');
+      }
+
+      calcularDutching();
+    }
+
+    // --- Função para Copiar Valor ---
+    function copyValue(spanId) {
+        const valueToCopy = document.getElementById(spanId).innerText.trim(); 
+        const tempInput = document.createElement("input");
+        document.body.appendChild(tempInput);
+        tempInput.value = valueToCopy;
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+    }
+
+    // --- Lógica do Tema (Dark Mode) ---
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement; // O elemento <html>
+
+    function loadTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            htmlElement.classList.add('dark-theme');
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>'; // Ícone de sol
+        } else {
+            htmlElement.classList.remove('dark-theme');
+            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>'; // Ícone de lua
+        }
+    }
+
+    function toggleTheme() {
+        if (htmlElement.classList.contains('dark-theme')) {
+            htmlElement.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            htmlElement.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    }
+
+    // --- Inicialização ao carregar a página ---
+    document.addEventListener("DOMContentLoaded", function() {
+        loadTheme(); // Carrega o tema salvo ao iniciar
+        themeToggleBtn.addEventListener('click', toggleTheme); // Adiciona o listener ao botão
+        reiniciar(); 
+    });
+  </script>
+</body>
+</html>
