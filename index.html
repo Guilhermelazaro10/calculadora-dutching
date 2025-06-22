@@ -56,8 +56,8 @@
         --toggle-circle-off: #f4f4f4;
         --toggle-bg-on: #2ecc71; 
         --toggle-circle-on: #f4f4f4;
-        --toggle-icon-color-off: #555; /* Cor do ícone da lua (tema claro) */
-        --toggle-icon-color-on: #fff; /* Cor do ícone do sol (tema escuro) */
+        --toggle-icon-color-off: #555; 
+        --toggle-icon-color-on: #fff; 
     }
 
     /* Variáveis CSS para o tema escuro */
@@ -102,8 +102,8 @@
         --toggle-circle-off: #f4f4f4;
         --toggle-bg-on: #3498db; 
         --toggle-circle-on: #f4f4f4;
-        --toggle-icon-color-off: #fff; /* Cor do ícone da lua (tema escuro) */
-        --toggle-icon-color-on: #fff; /* Cor do ícone do sol (tema claro) */
+        --toggle-icon-color-off: #fff; 
+        --toggle-icon-color-on: #fff; 
     }
 
     body {
@@ -289,7 +289,7 @@
         -webkit-transition: .4s;
         transition: .4s;
         border-radius: 34px; 
-        box-shadow: inset 0 0 5px rgba(0,0,0,0.2); /* Sombra interna na barra */
+        box-shadow: inset 0 0 5px rgba(0,0,0,0.2); 
     }
     .slider:before {
         position: absolute;
@@ -302,9 +302,8 @@
         -webkit-transition: .4s;
         transition: .4s;
         border-radius: 50%; 
-        box-shadow: 0 2px 3px rgba(0,0,0,0.2); /* Sombra no círculo */
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2); 
     }
-    /* Quando o checkbox está marcado (tema escuro ativo) */
     .theme-toggle-switch input:checked + .slider {
         background-color: var(--toggle-bg-on); 
     }
@@ -323,27 +322,26 @@
         font-size: 16px; /* AUMENTADO O TAMANHO DA FONTE DOS ÍCONES */
         line-height: 34px; /* Centraliza verticalmente com nova altura do slider */
         transition: opacity 0.4s ease, transform 0.4s ease;
-        opacity: 0; /* Escondido por padrão */
-        font-weight: 900; /* Mais bold para serem mais visíveis */
+        opacity: 0; 
+        font-weight: 900; 
     }
     .slider .icon-moon { 
-        left: 8px; /* Posição à esquerda */
-        color: var(--toggle-icon-color-off); /* Cor da lua */
-        opacity: 1; /* Visível por padrão (tema claro) */
+        left: 8px; 
+        color: var(--toggle-icon-color-off); 
+        opacity: 1; 
     }
     .slider .icon-sun { 
-        right: 8px; /* Posição à direita */
-        color: var(--toggle-icon-color-on); /* Cor do sol */
+        right: 8px; 
+        color: var(--toggle-icon-color-on); 
         opacity: 0; 
     }
-    /* Visibilidade e Posição dos ícones quando tema é alternado */
     .theme-toggle-switch input:checked + .slider .icon-moon {
         opacity: 0; 
-        transform: translateX(-5px); /* Move um pouco para fora para esconder */
+        transform: translateX(-5px); 
     }
     .theme-toggle-switch input:checked + .slider .icon-sun {
         opacity: 1; 
-        transform: translateX(0); /* Garante que o sol esteja na posição */
+        transform: translateX(0); 
     }
 
 
@@ -374,7 +372,7 @@
             top: 10px;
             right: 10px;
         }
-        .theme-toggle-switch { /* Reduz o tamanho do switch em mobile */
+        .theme-toggle-switch { 
             width: 50px; 
             height: 28px;
         }
@@ -388,8 +386,24 @@
             transform: translateX(22px); 
         }
         .slider .icon-sun, .slider .icon-moon {
-            font-size: 14px; /* Ajuste o tamanho do ícone em mobile */
+            font-size: 14px; 
             line-height: 28px;
+        }
+        /* Ajuste para alinhar Lucro/Retorno em mobile */
+        .row.mobile-align-center {
+            display: flex;
+            flex-direction: row; /* Mantém em linha */
+            justify-content: center; /* Centraliza o conteúdo horizontalmente */
+            gap: 10px; /* Espaço entre os itens */
+        }
+        .row.mobile-align-center > div {
+            flex: 1; /* Permite que as colunas se expandam igualmente */
+            max-width: 50%; /* Limita para não ficarem muito grandes */
+            text-align: center; /* Centraliza o texto dentro da coluna */
+        }
+        .row.mobile-align-center strong {
+            display: block; /* Garante que "Lucro:" e "Retorno:" fiquem em sua própria linha */
+            margin-bottom: 5px; /* Espaçamento abaixo do texto */
         }
     }
     @media (max-width: 576px) { 
@@ -420,7 +434,7 @@
     </div>
 
     <div class="logo-display">
-        <img src="aposta_sem_risco_favicon.png" alt="Logo Gol de Bet - Aposta Sem Risco">
+        <img src="logo_gol_de_bet.png" alt="Logo Gol de Bet - Aposta Sem Risco">
     </div>
 
     <h1 class="text-3xl text-center">Aposta Sem Risco</h1> <div class="mb-3">
@@ -431,7 +445,7 @@
         </div>
     </div>
 
-    <div class="row mb-3 text-center">
+    <div class="row mb-3 text-center mobile-align-center"> 
         <div class="col-6">
             <strong>Lucro:</strong> <span id="lucroDisplay" class="badge bg-success-custom">R$ 0,00</span>
         </div>
