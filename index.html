@@ -7,7 +7,7 @@
 
   <link rel="icon" href="aposta_sem_risco_favicon.png" type="image/png"> 
   
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,54 +16,61 @@
   <style>
     /* Variáveis CSS para o tema claro (padrão) */
     :root {
-        /* NOVA PALETA: Fundo suave e claro */
-        --body-bg-start: #f5f5f5; 
-        --body-bg-end: #ffffff; 
+        --body-bg-start: #6a11cb; 
+        --body-bg-end: #2575fc;   
         --card-bg: #ffffff;
-        --text-color-primary: #333333; 
-        --text-color-secondary: #555555; 
-        --heading-color: #333333; 
+        --text-color-primary: #2c3e50; 
+        --text-color-secondary: #5a6a7a; 
+        --heading-color: #2c3e50; 
         
-        --button-primary-bg: #28a745; 
-        --button-primary-border: #28a745;
+        --button-primary-bg: #4a90e2; 
+        --button-primary-border: #3a80d2;
         --button-primary-text: white;
         
-        --button-secondary-bg: #dc3545; 
-        --button-secondary-border: #dc3545;
+        --button-secondary-bg: #e74c3c; 
+        --button-secondary-border: #cf3a2a;
         --button-secondary-text: white;
         
-        --button-highlight-bg: #b8860b; /* Ouro queimado */
-        --button-highlight-border: #8b6508;
+        --button-highlight-bg: #f39c12; 
+        --button-highlight-border: #e08e0b;
         --button-highlight-text: white;
 
-        --table-header-bg: #495057; 
+        --table-header-bg: #34495e; 
         --table-header-text: white;
         
-        --badge-success-bg: #28a745; 
-        --badge-danger-bg: #dc3545; 
-        --badge-secondary-bg: #6c757d; 
+        --badge-success-bg: #2ecc71; 
+        --badge-danger-bg: #e74c3c; 
+        --badge-secondary-bg: #95a5a6; 
         
         --input-bg: white;
-        --input-border: #ced4da;
-        --input-text-addon-bg: #e9ecef;
-        --input-text-addon-border: #ced4da;
+        --input-border: #dcdcdc; 
+        --input-text-addon-bg: #f5f5f5; 
+        --input-text-addon-border: #dcdcdc;
         
-        --copy-btn-color: #007bff;
-        --info-badge-bg: #007bff;
-        --info-link-color: #007bff;
+        --copy-btn-color: #3498db;
+        --info-badge-bg: #3498db; 
+        --info-link-color: #3498db;
+        
+        /* Cores do Toggle Switch - CLARO */
+        --toggle-bg-off: #ccc;
+        --toggle-circle-off: #f4f4f4;
+        --toggle-bg-on: #2ecc71; 
+        --toggle-circle-on: #f4f4f4;
+        --toggle-icon-color-off: #555; /* Cor do ícone da lua (tema claro) */
+        --toggle-icon-color-on: #fff; /* Cor do ícone do sol (tema escuro) */
     }
 
     /* Variáveis CSS para o tema escuro */
     .dark-theme {
-        --body-bg-start: #2c3e50; 
-        --body-bg-end: #34495e; 
-        --card-bg: #3d566e; 
-        --text-color-primary: #ecf0f1; 
-        --text-color-secondary: #bdc3c7; 
-        --heading-color: #ecf0f1;
+        --body-bg-start: #1a1a2e; 
+        --body-bg-end: #16213e;   
+        --card-bg: #222831; 
+        --text-color-primary: #ececec; 
+        --text-color-secondary: #aaaaaa; 
+        --heading-color: #ececec;
         
-        --button-primary-bg: #2ecc71; 
-        --button-primary-border: #2ecc71;
+        --button-primary-bg: #3498db; 
+        --button-primary-border: #2980b9;
         --button-primary-text: white;
         
         --button-secondary-bg: #c0392b; 
@@ -72,28 +79,36 @@
         
         --button-highlight-bg: #f1c40f; 
         --button-highlight-border: #f39c12;
-        --button-highlight-text: #2c3e50; 
+        --button-highlight-text: #222831; 
 
-        --table-header-bg: #2c3e50; 
-        --table-header-text: white;
+        --table-header-bg: #1a202c; 
+        --table-header-text: #ececec;
         
         --badge-success-bg: #27ae60;
         --badge-danger-bg: #e74c3c;
         --badge-secondary-bg: #7f8c8d;
         
-        --input-bg: #5a758e; 
-        --input-border: #6d879e;
-        --input-text-addon-bg: #4a627a;
+        --input-bg: #393e46; 
+        --input-border: #4d545e;
+        --input-text-addon-bg: #4a545e;
         --input-text-addon-border: #5a758e;
         
         --copy-btn-color: #85c1e9;
-        --info-badge-bg: #5a758e;
+        --info-badge-bg: #4a545e;
         --info-link-color: #85c1e9;
+
+        /* Cores do Toggle Switch - ESCURO */
+        --toggle-bg-off: #555;
+        --toggle-circle-off: #f4f4f4;
+        --toggle-bg-on: #3498db; 
+        --toggle-circle-on: #f4f4f4;
+        --toggle-icon-color-off: #fff; /* Cor do ícone da lua (tema escuro) */
+        --toggle-icon-color-on: #fff; /* Cor do ícone do sol (tema claro) */
     }
 
     body {
       background: linear-gradient(to right, var(--body-bg-start), var(--body-bg-end)) !important; 
-      font-family: 'Roboto', sans-serif !important; 
+      font-family: 'Poppins', sans-serif !important; 
       display: block;
       min-height: 100vh;
       padding: 0;
@@ -102,35 +117,37 @@
     .container-custom {
         background-color: var(--card-bg) !important;
         border-radius: 1rem !important;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
-        padding: 2rem !important;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.2) !important; 
+        padding: 2.5rem !important; 
         width: 95% !important;
         margin: 2rem auto !important;
         max-width: 960px !important;
     }
     h1 {
-      font-family: 'Lato', sans-serif !important; 
+      font-family: 'Montserrat', sans-serif !important; 
       color: var(--heading-color) !important; 
-      font-weight: bold !important;
+      font-weight: 700 !important; 
+      margin-bottom: 2rem !important; 
     }
     .logo-display { 
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem; 
     }
     .logo-display img {
         max-width: 100%;
         height: auto;
-        max-height: 120px; /* AUMENTADO O TAMANHO DA LOGO AQUI */ 
+        max-height: 120px; 
         display: inline-block; 
         margin: 0 auto; 
     }
 
     #lucroDisplay, #retornoTotalDisplay {
-        font-size: 1.1rem !important;
-        font-weight: bold !important;
-        padding: 0.5rem 0.8rem !important;
-        border-radius: 0.3rem !important;
+        font-size: 1.1rem !important; 
+        font-weight: 700 !important; 
+        padding: 0.6rem 1rem !important; 
+        border-radius: 0.5rem !important; 
         display: inline-block !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
     }
     #lucroDisplay.bg-success-custom {
         background-color: var(--badge-success-bg) !important; 
@@ -148,19 +165,23 @@
         background-color: var(--table-header-bg) !important; 
         color: var(--table-header-text) !important;
         text-align: center !important;
+        padding: 0.8rem !important; 
     }
     .table-responsive {
-        margin-top: 1.5rem !important;
+        margin-top: 1.5rem !important; 
     }
     .input-group-text {
         background-color: var(--input-text-addon-bg) !important;
         border: 1px solid var(--input-text-addon-border) !important;
         color: var(--text-color-primary) !important; 
+        border-radius: 0.5rem 0 0 0.5rem !important; 
     }
     .form-control { 
         background-color: var(--input-bg) !important;
         border: 1px solid var(--input-border) !important;
         color: var(--text-color-primary) !important; 
+        border-radius: 0 0.5rem 0.5rem 0 !important; 
+        padding: 0.75rem 1rem !important; 
     }
     .odd-input {
         text-align: center !important;
@@ -168,24 +189,46 @@
     .badge-secondary-custom {
         background-color: var(--badge-secondary-bg) !important; 
         color: var(--text-color-primary) !important; 
+        padding: 0.5em 0.8em !important; 
+        border-radius: 0.3rem !important;
     }
     .copy-btn {
-        margin-left: 5px !important;
+        margin-left: 8px !important; 
         text-decoration: none !important;
-        font-weight: bold !important;
-        font-size: 0.75rem !important;
+        font-weight: 500 !important; 
+        font-size: 0.8rem !important; 
         color: var(--copy-btn-color) !important;
+        transition: color 0.2s ease;
+    }
+    .copy-btn:hover {
+        color: var(--button-primary-bg) !important; 
     }
     .btn-primary { 
         background-color: var(--button-primary-bg) !important; 
         border-color: var(--button-primary-border) !important;
         color: var(--button-primary-text) !important;
-        font-weight: bold !important;
+        font-weight: 600 !important; 
+        padding: 0.75rem 1.5rem !important; 
+        border-radius: 0.5rem !important;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1); 
+        transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+        transform: translateY(-2px); 
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     }
     .btn-warning-custom {
         background-color: var(--button-secondary-bg) !important; 
         color: var(--button-secondary-text) !important; 
-        font-weight: bold !important;
+        font-weight: 600 !important; 
+        padding: 0.75rem 1.5rem !important; 
+        border-radius: 0.5rem !important;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .btn-warning-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     }
     .value-cell-content {
         display: flex !important;
@@ -200,31 +243,109 @@
     .info-section h5 .badge {
         background-color: var(--info-badge-bg) !important; 
         color: white !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: 1.5rem !important; 
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        margin-bottom: 1rem; 
+        display: inline-block; 
     }
     .info-section p {
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.8rem !important; 
         color: var(--text-color-secondary) !important; 
+        line-height: 1.6; 
     }
     .info-section a {
         color: var(--info-link-color) !important; 
+        font-weight: 500 !important;
     }
 
-    /* Estilos do botão de tema */
-    .theme-toggle-btn {
+    /* ESTILOS DO TOGGLE SWITCH - MAIS BONITO E INTERATIVO */
+    .theme-toggle-container {
         position: absolute;
-        top: 15px;
-        right: 15px;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--text-color-primary); 
+        top: 20px; 
+        right: 20px; 
         z-index: 10;
-        transition: color 0.3s ease;
     }
-    .theme-toggle-btn:hover {
-        color: var(--button-highlight-bg); 
+    .theme-toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 60px; 
+        height: 34px; 
     }
+    .theme-toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--toggle-bg-off); 
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 34px; 
+        box-shadow: inset 0 0 5px rgba(0,0,0,0.2); /* Sombra interna na barra */
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px; 
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: var(--toggle-circle-off); 
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 50%; 
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2); /* Sombra no círculo */
+    }
+    /* Quando o checkbox está marcado (tema escuro ativo) */
+    .theme-toggle-switch input:checked + .slider {
+        background-color: var(--toggle-bg-on); 
+    }
+    .theme-toggle-switch input:focus + .slider {
+        box-shadow: 0 0 1px var(--toggle-bg-on);
+    }
+    .theme-toggle-switch input:checked + .slider:before {
+        -webkit-transform: translateX(26px); 
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        background-color: var(--toggle-circle-on); 
+    }
+    /* Ícones dentro do slider - TAMANHO E COR AJUSTADOS */
+    .slider .icon-sun, .slider .icon-moon {
+        position: absolute;
+        font-size: 16px; /* AUMENTADO O TAMANHO DA FONTE DOS ÍCONES */
+        line-height: 34px; /* Centraliza verticalmente com nova altura do slider */
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        opacity: 0; /* Escondido por padrão */
+        font-weight: 900; /* Mais bold para serem mais visíveis */
+    }
+    .slider .icon-moon { 
+        left: 8px; /* Posição à esquerda */
+        color: var(--toggle-icon-color-off); /* Cor da lua */
+        opacity: 1; /* Visível por padrão (tema claro) */
+    }
+    .slider .icon-sun { 
+        right: 8px; /* Posição à direita */
+        color: var(--toggle-icon-color-on); /* Cor do sol */
+        opacity: 0; 
+    }
+    /* Visibilidade e Posição dos ícones quando tema é alternado */
+    .theme-toggle-switch input:checked + .slider .icon-moon {
+        opacity: 0; 
+        transform: translateX(-5px); /* Move um pouco para fora para esconder */
+    }
+    .theme-toggle-switch input:checked + .slider .icon-sun {
+        opacity: 1; 
+        transform: translateX(0); /* Garante que o sol esteja na posição */
+    }
+
 
     /* Ajustes para telas menores */
     @media (max-width: 768px) { 
@@ -233,32 +354,76 @@
             padding: 1rem !important;
             margin: 1rem auto !important;
         }
+        h1 {
+            font-size: 2rem !important; 
+        }
+        .logo-display img {
+            max-height: 100px; 
+        }
+        #lucroDisplay, #retornoTotalDisplay {
+            font-size: 1rem !important; 
+            padding: 0.4rem 0.6rem !important;
+        }
+        .input-group-text, .form-control {
+            padding: 0.6rem 0.8rem !important; 
+        }
+        .odd-label {
+            display: none !important; 
+        }
+        .theme-toggle-container { 
+            top: 10px;
+            right: 10px;
+        }
+        .theme-toggle-switch { /* Reduz o tamanho do switch em mobile */
+            width: 50px; 
+            height: 28px;
+        }
+        .slider:before {
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+        }
+        .theme-toggle-switch input:checked + .slider:before {
+            transform: translateX(22px); 
+        }
+        .slider .icon-sun, .slider .icon-moon {
+            font-size: 14px; /* Ajuste o tamanho do ícone em mobile */
+            line-height: 28px;
+        }
     }
     @media (max-width: 576px) { 
         .container-custom {
             padding: 0.75rem !important;
         }
-        .odd-label {
-            display: none !important; 
+        .info-section h5 .badge {
+            font-size: 0.9rem !important; 
+            padding: 0.4rem 0.8rem !important;
         }
-        .theme-toggle-btn { 
-            top: 10px;
-            right: 10px;
-            font-size: 1.2rem;
+        .btn-primary, .btn-warning-custom {
+            padding: 0.6rem 1rem !important; 
+            font-size: 0.9rem !important;
         }
     }
   </style>
 </head>
 <body>
   <div class="container-custom">
-    <button id="themeToggle" class="theme-toggle-btn">
-        <i class="fas fa-moon"></i> </button>
+    <div class="theme-toggle-container">
+        <label class="theme-toggle-switch">
+            <input type="checkbox" id="themeToggleCheckbox">
+            <span class="slider">
+                <i class="fas fa-moon icon-moon"></i>
+                <i class="fas fa-sun icon-sun"></i>
+            </span>
+        </label>
+    </div>
 
     <div class="logo-display">
         <img src="aposta_sem_risco_favicon.png" alt="Logo Gol de Bet - Aposta Sem Risco">
     </div>
 
-    <h1 class="text-3xl text-center mb-6">Aposta Sem Risco</h1> <div class="mb-3">
+    <h1 class="text-3xl text-center">Aposta Sem Risco</h1> <div class="mb-3">
         <strong>Investimento:</strong>
         <div class="input-group">
             <span class="input-group-text">R$</span>
@@ -298,34 +463,22 @@
             </tr>
             <tr>
                 <td colspan="3" class="info-section">
-                    <h5><span class="badge bg-primary">Legenda:</span></h5>
-                    <p><strong>Investimento:</strong> valor total a distribuir nas apostas.</p>
-                    <p><strong>Lucro:</strong> cálculo retorno do investimento total subtraído do valor da aposta.</p>
-                    <p><strong>Retorno:</strong> ganhos se qualquer uma das apostas for vencedora.</p>
+                    <h5><span class="badge bg-primary">O que significam os termos:</span></h5>
+                    <p><strong>Investimento:</strong> O capital que você aloca estrategicamente em suas seleções para garantir um resultado, cobrindo diferentes cenários.</p>
+                    <p><strong>Lucro:</strong> O ganho líquido que você realiza, independentemente da seleção vencedora, após todas as suas apostas serem contabilizadas e o investimento inicial coberto.</p>
+                    <p><strong>Retorno:</strong> O valor total que retorna ao seu bolso quando uma de suas apostas é vitoriosa, incluindo o que foi apostado naquela linha.</p>
                 </td>
             </tr>
             <tr>
                 <td colspan="3" class="info-section">
-                    <h5><span class="badge bg-primary">O que é Dutching:</span></h5>
-                    <p>Dutching é o compartilhamento do risco entre várias apostas. É preciso calcular a aposta correta a ser colocada em cada seleção, para que o retorno seja o mesmo se alguma delas for vencedora.</p>
+                    <h5><span class="badge bg-primary">Desvendando o Dutching:</span></h5>
+                    <p>Dutching é uma técnica inteligente de aposta onde você divide seu investimento em múltiplos resultados dentro de um mesmo evento. O objetivo é ajustar a quantia apostada em cada opção de forma que, se qualquer uma delas vencer, seu lucro seja o mesmo. Isso ajuda a mitigar riscos e a explorar cenários com maior flexibilidade.</p>
                 </td>
             </tr>
             <tr>
                 <td colspan="3" class="info-section">
-                    <h5><span class="badge bg-primary">O que é ODD:</span></h5>
-                    <p>ODD é o valor pago no evento em que você apostou. Quanto maior a probabilidade de um resultado acontecer, menor será o preço que as bookies irão te pagar e consequentemente o retorno será baixo também. Assim como, quanto menos provável o resultado, maior será a odd do evento.</p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" class="info-section">
-                    <h5><span class="badge bg-primary">Contato:</span></h5>
-                    <p>Para sugestões, parcerias ou publicidade, entre em contato pelo e-mail: <a href="mailto:contato@calculadoradedutching.com">contato@calculadoradedutching.com</a></p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" class="info-section">
-                    <h5><span class="badge bg-primary">Ajude a manter este projeto vivo. Obrigado!</span></h5>
-                    <p><a href="https://www.paypal.com/donate?business=USGCRZHJ8X3DG&amp;currency_code=BRL" target="_blank"><strong>Doar via PayPal</strong></a></p>
+                    <h5><span class="badge bg-primary">Dominando as Odds:</span></h5>
+                    <p>Odds (cotações) são o coração das apostas. Elas refletem a probabilidade estimada de um evento e definem o quanto você pode ganhar. Odds menores indicam maior chance e menor lucro, enquanto odds maiores oferecem um prêmio mais alto para eventos menos prováveis. Nossa calculadora simplifica isso usando odds decimais, tornando a análise rápida e eficaz.</p>
                 </td>
             </tr>
         </tfoot>
@@ -563,36 +716,34 @@
     }
 
     // --- Lógica do Tema (Dark Mode) ---
-    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeToggleCheckbox = document.getElementById('themeToggleCheckbox'); 
     const htmlElement = document.documentElement; // O elemento <html>
 
     function loadTheme() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             htmlElement.classList.add('dark-theme');
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>'; // Ícone de sol
+            themeToggleCheckbox.checked = true; 
         } else {
             htmlElement.classList.remove('dark-theme');
-            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>'; // Ícone de lua
+            themeToggleCheckbox.checked = false; 
         }
     }
 
-    function toggleTheme() {
-        if (htmlElement.classList.contains('dark-theme')) {
-            htmlElement.classList.remove('dark-theme');
-            localStorage.setItem('theme', 'light');
-            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        } else {
+    function toggleTheme() { 
+        if (themeToggleCheckbox.checked) { 
             htmlElement.classList.add('dark-theme');
             localStorage.setItem('theme', 'dark');
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else { 
+            htmlElement.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
         }
     }
 
     // --- Inicialização ao carregar a página ---
     document.addEventListener("DOMContentLoaded", function() {
-        loadTheme(); // Carrega o tema salvo ao iniciar
-        themeToggleBtn.addEventListener('click', toggleTheme); // Adiciona o listener ao botão
+        loadTheme(); 
+        themeToggleCheckbox.addEventListener('change', toggleTheme); 
         reiniciar(); 
     });
   </script>
