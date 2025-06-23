@@ -136,7 +136,7 @@
     .logo-display img {
         max-width: 100%;
         height: auto;
-        max-height: 180px; 
+        max-height: 120px; 
         display: inline-block; 
         margin: 0 auto; 
     }
@@ -260,7 +260,7 @@
         font-weight: 500 !important;
     }
 
-    /* ESTILOS DO TOGGLE SWITCH - MAIS BONITO E INTERATIVO */
+    /* ESTILOS DO TOGGLE SWITCH */
     .theme-toggle-container {
         position: absolute;
         top: 20px; 
@@ -316,11 +316,11 @@
         transform: translateX(26px);
         background-color: var(--toggle-circle-on); 
     }
-    /* Ícones dentro do slider - TAMANHO E COR AJUSTADOS */
+    /* Ícones dentro do slider */
     .slider .icon-sun, .slider .icon-moon {
         position: absolute;
-        font-size: 16px; /* AUMENTADO O TAMANHO DA FONTE DOS ÍCONES */
-        line-height: 34px; /* Centraliza verticalmente com nova altura do slider */
+        font-size: 16px; 
+        line-height: 34px; 
         transition: opacity 0.4s ease, transform 0.4s ease;
         opacity: 0; 
         font-weight: 900; 
@@ -391,19 +391,17 @@
         }
         /* Ajuste para alinhar Lucro/Retorno em mobile */
         .row.mobile-align-center {
-            display: flex;
-            flex-direction: row; /* Mantém em linha */
-            justify-content: center; /* Centraliza o conteúdo horizontalmente */
-            gap: 10px; /* Espaço entre os itens */
+            flex-direction: column; /* Coloca um abaixo do outro em mobile */
+            gap: 10px; /* Espaço entre eles */
         }
         .row.mobile-align-center > div {
-            flex: 1; /* Permite que as colunas se expandam igualmente */
-            max-width: 50%; /* Limita para não ficarem muito grandes */
-            text-align: center; /* Centraliza o texto dentro da coluna */
+            flex: none; /* Remove flex-1 */
+            max-width: 100%; /* Ocupa largura total */
+            text-align: center; 
         }
         .row.mobile-align-center strong {
-            display: block; /* Garante que "Lucro:" e "Retorno:" fiquem em sua própria linha */
-            margin-bottom: 5px; /* Espaçamento abaixo do texto */
+            display: inline; /* Mantém na mesma linha que o valor */
+            margin-right: 5px; /* Espaço entre o texto e o badge */
         }
     }
     @media (max-width: 576px) { 
@@ -519,10 +517,20 @@
     // Limpa valor de MOEDA (Investimento) para cálculo
     // Remove R$, espaços, PONTOS DE MILHAR, e substitui vírgula por ponto decimal.
     function cleanCurrencyValue(value) {
-      return String(value)
-        .replace(/[R$ ]/g, '')   // Remove R$ e espaços
-        .replace(/\./g, '')     // Remove PONTOS DE MILHAR (ex: 1.000,00 -> 1000,00)
-        .replace(/,/g, '.');    // Substitui VÍRGULA por PONTO DECIMAL (ex: 1000,00 -> 1000.00)
+      // **AQUI ESTÁ A CHAVE DA CORREÇÃO:**
+      // Verifica se a string contém uma vírgula.
+      // Se tiver vírgula, assume que ela é o separador decimal e remove apenas os pontos (separadores de milhar).
+      // Se NÃO tiver vírgula, assume que o ponto é o separador decimal e não o remove.
+      if (String(value).includes(',')) {
+          return String(value)
+              .replace(/[R$ ]/g, '')   // Remove R$ e espaços
+              .replace(/\./g, '')     // Remove PONTOS DE MILHAR
+              .replace(/,/g, '.');    // Substitui VÍRGULA por PONTO DECIMAL
+      } else {
+          return String(value)
+              .replace(/[R$ ]/g, '');   // Remove R$ e espaços
+              // NÃO REMOVE PONTOS AQUI, pois podem ser decimais (ex: 10.20)
+      }
     }
 
     // Limpa valor DECIMAL (Odds) para cálculo
@@ -552,11 +560,13 @@
 
     // --- Funções de tratamento de input para Valor Total ---
     function handleStakeInput(inputElement) {
+      // No keyup, apenas substitui vírgula por ponto no próprio input para facilitar a digitação
       inputElement.value = inputElement.value.replace(",", ".");
       calcularDutching();
     }
 
     function formatStakeOnBlur(inputElement) {
+        // Usa cleanCurrencyValue para formatar o valor de investimento para o cálculo
         let value = cleanCurrencyValue(inputElement.value);
         let parsedValue = parseFloat(value);
 
