@@ -8,37 +8,38 @@
   <link rel="icon" href="aposta_sem_risco_favicon.png" type="image/png"> 
   
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
-    /* Variáveis CSS para o Tema Claro: Paleta suave e profissional */
+    /* Variáveis CSS para o Tema Claro (padrão) */
     :root {
-        --body-bg-start: #f0f4f8; /* Azul claro muito suave */
-        --body-bg-end: #ffffff;   /* Branco */
+        --body-bg-start: #f0f4f8; 
+        --body-bg-end: #ffffff;   
         --card-bg: #ffffff;
-        --text-color-primary: #2c3e50; /* Azul marinho escuro */
-        --text-color-secondary: #607d8b; /* Cinza azulado */
+        --text-color-primary: #2c3e50; 
+        --text-color-secondary: #607d8b; 
         --heading-color: #2c3e50; 
         
-        --button-primary-bg: #4a90e2; /* Azul médio */
+        --button-primary-bg: #4a90e2; 
         --button-primary-border: #357bd2;
         --button-primary-text: white;
         
-        --button-secondary-bg: #e74c3c; /* Vermelho alerta */
+        --button-secondary-bg: #e74c3c; 
         --button-secondary-border: #cf3a2a;
         --button-secondary-text: white;
         
-        --button-highlight-bg: #f39c12; /* Amarelo ouro */
+        --button-highlight-bg: #f39c12; 
         --button-highlight-border: #e08e0b;
         --button-highlight-text: white;
 
-        --table-header-bg: #34495e; /* Azul marinho cabeçalho */
+        --table-header-bg: #34495e; 
         --table-header-text: white;
         
-        --badge-success-bg: #2ecc71; /* Verde esmeralda */
+        --badge-success-bg: #2ecc71; 
         --badge-danger-bg: #e74c3c; 
         --badge-secondary-bg: #95a5a6; 
         
@@ -88,13 +89,13 @@
         --badge-danger-bg: #e74c3c;
         --badge-secondary-bg: #7f8c8d;
         
-        --input-bg: #2f3b49; 
-        --input-border: #4a5c6f;
-        --input-text-addon-bg: #3a4b5d;
-        --input-text-addon-border: #4a5c6f;
+        --input-bg: #3a4c5e; 
+        --input-border: #5c758e;
+        --input-text-addon-bg: #4a5c6f;
+        --input-text-addon-border: #5c758e;
         
         --copy-btn-color: #79c1f0;
-        --info-badge-bg: #3a4b5d;
+        --info-badge-bg: #3a4c5e;
         --info-link-color: #79c1f0;
 
         /* Cores do Toggle Switch - ESCURO */
@@ -106,7 +107,6 @@
         --toggle-icon-color-on: #ffffff; 
     }
 
-    /* Estilos Globais do Corpo e Container Principal */
     body {
       background: linear-gradient(to right, var(--body-bg-start), var(--body-bg-end)) !important; 
       font-family: 'Poppins', sans-serif !important; 
@@ -114,78 +114,73 @@
       min-height: 100vh;
       padding: 0;
       color: var(--text-color-primary) !important; 
-      transition: background-color 0.5s ease; /* Transição para o fundo do body */
+      transition: background-color 0.5s ease; 
     }
     .container-custom {
         background-color: var(--card-bg) !important;
-        border-radius: 1.25rem !important; /* Mais arredondado */
-        box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important; /* Sombra mais suave e espalhada */
-        padding: 3rem !important; /* Mais padding para respiro */
+        border-radius: 1.25rem !important; 
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important; 
+        padding: 3rem !important; 
         width: 95% !important;
-        margin: 2.5rem auto !important; /* Mais margem top/bottom */
+        margin: 2.5rem auto !important;
         max-width: 1000px !important; 
         position: relative; 
         overflow: hidden; 
-        transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Transição para o card */
+        transition: background-color 0.5s ease, box-shadow 0.5s ease; 
     }
-    
-    /* Estilos do Título Principal (Aposta Sem Risco) */
     h1 {
-      font-family: 'Montserrat', sans-serif !important; /* Título: Montserrat */
+      font-family: 'Orbitron', sans-serif !important; /* MUDANÇA DE FONTE PARA ORBITRON */
       color: var(--heading-color) !important; 
       font-weight: 700 !important; 
-      margin-bottom: 2.5rem !important; 
+      margin-top: 0.5rem !important; 
+      margin-bottom: 1rem !important; 
       letter-spacing: 0.05em; 
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Sombra mais sutil */
+      font-size: 3.8rem !important; /* AUMENTADO O TAMANHO DA FONTE DO TÍTULO */
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.05); 
     }
-
-    /* Estilos da Logo */
     .logo-display { 
         text-align: center;
-        margin-bottom: 2rem; 
+        margin-bottom: 0.5rem; 
     }
     .logo-display img {
         max-width: 100%;
         height: auto;
-        max-height: 220px; /* Logo maior */ 
+        max-height: 220px; 
         display: inline-block; 
         margin: 0 auto; 
-        filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1)); /* Sombra mais pronunciada para a logo */
+        filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1)); 
     }
 
-    /* Estilos para Lucro e Retorno (Badges Globais) */
     #lucroDisplay, #retornoTotalDisplay {
-        font-size: 1.25rem !important; /* Texto maior */
+        font-size: 1.25rem !important; 
         font-weight: 700 !important; 
-        padding: 0.8rem 1.5rem !important; /* Padding maior */
-        border-radius: 0.8rem !important; /* Mais arredondado */
+        padding: 0.8rem 1.5rem !important; 
+        border-radius: 0.8rem !important; 
         display: inline-block !important;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra mais forte */
-        min-width: 120px; /* Garante que os badges tenham uma largura mínima */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+        min-width: 120px; 
         text-align: center;
     }
     #lucroDisplay.bg-success-custom { background-color: var(--badge-success-bg) !important; color: white !important; }
     #lucroDisplay.bg-danger-custom { background-color: var(--badge-danger-bg) !important; color: white !important; }
     #retornoTotalDisplay.bg-secondary-custom { background-color: var(--badge-secondary-bg) !important; color: white !important; }
 
-    /* Estilos da Tabela */
     .table-dark th {
         background-color: var(--table-header-bg) !important; 
         color: var(--table-header-text) !important;
         text-align: center !important;
-        padding: 1.2rem !important; /* Padding maior */
-        border-bottom: 2px solid rgba(255,255,255,0.15) !important; /* Linha mais visível */
+        padding: 1.2rem !important; 
+        border-bottom: 2px solid rgba(255,255,255,0.15) !important; 
         font-weight: 600 !important;
     }
     .table-responsive { margin-top: 2.5rem !important; }
     
-    /* Estilos dos Inputs (Campos de Odd e Investimento) */
     .input-group-text {
         background-color: var(--input-text-addon-bg) !important;
         border: 1px solid var(--input-text-addon-border) !important;
         color: var(--text-color-primary) !important; 
         border-radius: 0.6rem 0 0 0.6rem !important; 
-        padding: 0.75rem 1.2rem !important; /* Padding maior */
+        padding: 0.75rem 1.2rem !important; 
         font-weight: 500;
     }
     .form-control { 
@@ -193,35 +188,32 @@
         border: 1px solid var(--input-border) !important;
         color: var(--text-color-primary) !important; 
         border-radius: 0 0.6rem 0.6rem 0 !important; 
-        padding: 0.75rem 1.2rem !important; /* Padding maior */
-        box-shadow: inset 0 1px 4px rgba(0,0,0,0.08); /* Sombra interna mais suave */
+        padding: 0.75rem 1rem !important; 
+        box-shadow: inset 0 1px 4px rgba(0,0,0,0.08); 
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     .form-control:focus {
         border-color: var(--button-primary-bg) !important; 
         box-shadow: 0 0 0 0.2rem rgba(var(--button-primary-bg),.25) !important; 
-        outline: none; /* Remove o outline padrão */
+        outline: none; 
     }
     .odd-input { text-align: center !important; }
 
-    /* Badges de Investimento/Retorno na Tabela */
     .badge-secondary-custom {
         background-color: var(--badge-secondary-bg) !important; 
         color: var(--text-color-primary) !important; 
-        padding: 0.6em 1.2em !important; /* Mais padding */
+        padding: 0.6em 1em !important; 
         border-radius: 0.4rem !important;
         box-shadow: 0 1px 4px rgba(0,0,0,0.08); 
         font-weight: 600 !important;
-        min-width: 80px; /* Largura mínima para alinhamento */
+        min-width: 80px; 
         text-align: center;
     }
-
-    /* Botão Copiar */
     .copy-btn {
-        margin-left: 10px !important; /* Mais espaço */
+        margin-left: 10px !important; 
         text-decoration: none !important;
-        font-weight: 600 !important; /* Mais bold */
-        font-size: 0.9rem !important; /* Um pouco maior */
+        font-weight: 600 !important; 
+        font-size: 0.9rem !important; 
         color: var(--copy-btn-color) !important;
         transition: color 0.3s ease;
     }
@@ -230,19 +222,18 @@
         text-decoration: underline !important;
     }
 
-    /* Botões de Ação (Adicionar, Reiniciar) */
     .btn-primary { 
         background-color: var(--button-primary-bg) !important; 
         border-color: var(--button-primary-border) !important;
         color: var(--button-primary-text) !important;
         font-weight: 600 !important; 
-        padding: 0.9rem 2rem !important; /* Padding maior */
+        padding: 0.9rem 2rem !important; 
         border-radius: 0.6rem !important;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.18); /* Sombra mais forte */
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição com cubic-bezier para suavidade */
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15); 
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
     }
     .btn-primary:hover {
-        transform: translateY(-4px); /* Efeito de elevação maior */
+        transform: translateY(-3px); 
         box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
     .btn-warning-custom {
@@ -251,15 +242,14 @@
         font-weight: 600 !important; 
         padding: 0.9rem 2rem !important; 
         border-radius: 0.6rem !important;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     .btn-warning-custom:hover {
-        transform: translateY(-4px);
+        transform: translateY(-3px);
         box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
 
-    /* Conteúdo das Células da Tabela (Alinhamento) */
     .value-cell-content {
         display: flex !important;
         align-items: center !important;
@@ -268,31 +258,30 @@
         padding: 0 !important;
     }
     .value-cell-content .badge {
-        margin-right: 8px !important; /* Mais espaço */
+        margin-right: 5px !important;
     }
 
-    /* Seções Informativas */
     .info-section {
-        margin-top: 4rem !important; /* Mais espaço */
-        padding-top: 2rem; /* Padding interno */
-        border-top: 1px solid rgba(var(--text-color-primary), 0.1); /* Separador sutil */
+        margin-top: 3rem !important; 
+        padding-top: 2rem; 
+        border-top: 1px solid rgba(var(--text-color-primary), 0.1); 
     }
     .info-section h5 .badge {
         background-color: var(--info-badge-bg) !important; 
         color: white !important;
-        padding: 0.6rem 1.5rem !important; /* Mais padding e pílula */
+        padding: 0.6rem 1.5rem !important; 
         border-radius: 2rem !important; 
-        font-size: 1.1rem !important; 
+        font-size: 1.05rem !important; 
         font-weight: 700 !important;
-        margin-bottom: 1.5rem; /* Mais espaço */
+        margin-bottom: 1.5rem; 
         display: inline-block; 
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Sombra nos badges de seção */
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1); 
     }
     .info-section p {
         margin-bottom: 1.2rem !important; 
         color: var(--text-color-secondary) !important; 
-        line-height: 1.8; /* Mais espaçamento para leitura */
-        font-size: 1rem; 
+        line-height: 1.8; 
+        font-size: 0.95rem; 
     }
     .info-section a {
         color: var(--info-link-color) !important; 
@@ -305,12 +294,15 @@
         text-decoration: underline;
     }
 
-    /* Estilos do Toggle Switch */
+    /* ESTILOS DO TOGGLE SWITCH - MUDANÇAS PARA RESOLVER O BUG VISUAL EM MOBILE */
     .theme-toggle-container {
         position: absolute;
         top: 30px; 
         right: 30px; 
         z-index: 10;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
     }
     .theme-toggle-switch {
         position: relative;
@@ -333,7 +325,7 @@
         background-color: var(--toggle-bg-off); 
         transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
         border-radius: 38px; 
-        box-shadow: inset 0 0 8px rgba(0,0,0,0.3); /* Sombra interna mais forte */
+        box-shadow: inset 0 0 8px rgba(0,0,0,0.3); 
     }
     .slider:before {
         position: absolute;
@@ -345,7 +337,7 @@
         background-color: var(--toggle-circle-off); 
         transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
         border-radius: 50%; 
-        box-shadow: 0 3px 6px rgba(0,0,0,0.25); /* Sombra no círculo */
+        box-shadow: 0 3px 6px rgba(0,0,0,0.25); 
     }
     .theme-toggle-switch input:checked + .slider {
         background-color: var(--toggle-bg-on); 
@@ -361,29 +353,39 @@
     .slider .icon-sun, .slider .icon-moon {
         position: absolute;
         font-size: 18px; 
-        line-height: 38px; 
-        transition: all 0.4s ease-in-out; /* Transição para todas as propriedades */
+        line-height: 38px; /* Ajustado para centralizar com nova altura do slider */
+        transition: all 0.4s ease-in-out; 
         opacity: 0; 
         font-weight: 900; 
-        text-shadow: 0 0 2px rgba(0,0,0,0.2); /* Pequena sombra no ícone */
+        text-shadow: 0 0 2px rgba(0,0,0,0.2); 
+        display: flex; /* Adicionado para centralizar verticalmente no espaço disponível */
+        align-items: center;
+        justify-content: center;
+        height: 100%; 
+        width: 50%; /* Ocupa a largura do slider (dividido por 2) */
+        top: 0; 
+        left: 0; /* Posição inicial da lua na primeira metade */
     }
     .slider .icon-moon { 
-        left: 8px; 
+        left: 0; 
         color: var(--toggle-icon-color-off); 
         opacity: 1; 
+        transform: translateX(0); /* Posição inicial */
     }
     .slider .icon-sun { 
-        right: 8px; 
+        left: 50%; /* Posiciona o sol na metade direita */
         color: var(--toggle-icon-color-on); 
         opacity: 0; 
+        transform: translateX(0); /* Posição inicial */
     }
+    /* Animação dos ícones: Lua sai da vista e Sol entra */
     .theme-toggle-switch input:checked + .slider .icon-moon {
         opacity: 0; 
-        transform: translateX(-15px) scale(0.8); /* Esconde e encolhe */
+        transform: translateX(-100%); /* Move a lua totalmente para fora da vista (para a esquerda) */
     }
     .theme-toggle-switch input:checked + .slider .icon-sun {
         opacity: 1; 
-        transform: translateX(0) scale(1); /* Mostra e volta ao tamanho normal */
+        transform: translateX(0); /* O sol permanece na sua posição (já está em left: 50%) */
     }
 
     /* Ajustes de Responsividade (Media Queries) */
@@ -398,7 +400,6 @@
         }
         .logo-display img {
             max-height: 100px; 
-            margin-bottom: 1rem !important;
         }
         #lucroDisplay, #retornoTotalDisplay {
             font-size: 0.95rem !important; 
@@ -416,34 +417,63 @@
             right: 15px;
         }
         .theme-toggle-switch { 
-            width: 55px; 
-            height: 30px;
+            width: 50px; 
+            height: 28px;
         }
         .slider:before {
-            height: 22px;
-            width: 22px;
+            height: 20px;
+            width: 20px;
             left: 4px;
             bottom: 4px;
         }
         .theme-toggle-switch input:checked + .slider:before {
-            transform: translateX(21px); 
+            transform: translateX(22px); 
         }
-        .slider .icon-sun, .slider .icon-moon {
-            font-size: 15px; 
-            line-height: 30px;
+        .slider .icon-sun, .slider .icon-moon { /* Ajustes de ícones para mobile */
+            font-size: 14px; 
+            line-height: 28px; 
+            width: 50%; /* Mantém metade da largura do slider */
+            /* Posições ajustadas para ficar dentro do slider menor */
+            left: 0; /* Alinha lua na metade esquerda */
+            right: 0; /* Alinha sol na metade direita */
+            transform: translateX(0) !important; /* Remove transforms específicos de desktop */
         }
+        /* Nova Lógica de Posicionamento e Transição para Ícones em Mobile */
+        .slider .icon-moon { 
+            /* Posiciona a lua na metade esquerda do slider */
+            transform: translateX(0) !important; /* Fica na primeira metade */
+            left: 0 !important;
+        }
+        .slider .icon-sun { 
+            /* Posiciona o sol na metade direita do slider */
+            transform: translateX(0) !important; /* Fica na segunda metade */
+            left: 50% !important; /* Move para a segunda metade */
+        }
+        .theme-toggle-switch input:checked + .slider .icon-moon {
+            opacity: 0 !important; 
+            transform: translateX(-100%) !important; /* Lua sai para a esquerda */
+        }
+        .theme-toggle-switch input:checked + .slider .icon-sun {
+            opacity: 1 !important; 
+            transform: translateX(0) !important; /* Sol fica na posição */
+        }
+        /* Lucro/Retorno: MANTÉM LADO A LADO, MAS COM AJUSTES DE ESPAÇAMENTO E TAMANHO */
         .row.mobile-align-center {
+            display: flex;
             flex-direction: row; 
             flex-wrap: nowrap;
             justify-content: space-around; 
             align-items: center; 
-            padding: 0; 
-            margin: 0; /* Remove margem negativa */
+            padding: 0 5px; 
+            margin: 0 -5px; 
+            width: calc(100% + 10px); 
         }
         .row.mobile-align-center > div {
-            flex-basis: auto; 
+            flex: 1; 
+            min-width: 0; 
             max-width: none; 
-            padding: 0 5px; 
+            text-align: center; 
+            padding: 0 2px; 
         }
         .row.mobile-align-center strong {
             display: block; 
@@ -451,36 +481,32 @@
             margin-bottom: 2px;
             white-space: nowrap; 
         }
-        .info-section {
-            margin-top: 2rem !important;
-            padding-top: 1.5rem;
+        .input-group {
+            flex-wrap: nowrap; 
+            width: 100%; 
         }
-        .info-section h5 .badge {
-            font-size: 0.95rem !important;
-            padding: 0.5rem 1rem !important;
-            margin-bottom: 1rem;
-        }
-        .info-section p {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 0.6rem !important;
-        }
-        .copy-btn {
-            margin-left: 5px !important;
-            font-size: 0.7rem !important;
+        .odd-input {
+            width: 100%; 
         }
     }
     @media (max-width: 576px) { 
         .container-custom {
-            padding: 1rem !important;
+            padding: 1rem !important; 
         }
         .info-section h5 .badge {
-            font-size: 0.85rem !important; 
-            padding: 0.3rem 0.8rem !important;
+            font-size: 0.9rem !important; 
+            padding: 0.4rem 0.8rem !important;
         }
         .btn-primary, .btn-warning-custom {
             padding: 0.6rem 1rem !important; 
             font-size: 0.9rem !important;
+        }
+        .row.mobile-align-center strong {
+            font-size: 0.75rem; 
+        }
+        #lucroDisplay, #retornoTotalDisplay {
+            font-size: 0.9rem !important; 
+            padding: 0.3rem 0.5rem !important;
         }
     }
   </style>
