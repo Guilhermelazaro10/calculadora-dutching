@@ -14,98 +14,99 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
-    /* Variáveis CSS para o tema claro (padrão) */
+    /* Variáveis CSS para o Tema Claro: Paleta suave e profissional */
     :root {
-        --body-bg-start: #6a11cb; 
-        --body-bg-end: #2575fc;   
+        --body-bg-start: #f0f4f8; /* Azul claro muito suave */
+        --body-bg-end: #ffffff;   /* Branco */
         --card-bg: #ffffff;
-        --text-color-primary: #2c3e50; 
-        --text-color-secondary: #5a6a7a; 
+        --text-color-primary: #2c3e50; /* Azul marinho escuro */
+        --text-color-secondary: #607d8b; /* Cinza azulado */
         --heading-color: #2c3e50; 
         
-        --button-primary-bg: #4a90e2; 
-        --button-primary-border: #3a80d2;
+        --button-primary-bg: #4a90e2; /* Azul médio */
+        --button-primary-border: #357bd2;
         --button-primary-text: white;
         
-        --button-secondary-bg: #e74c3c; 
+        --button-secondary-bg: #e74c3c; /* Vermelho alerta */
         --button-secondary-border: #cf3a2a;
         --button-secondary-text: white;
         
-        --button-highlight-bg: #f39c12; 
+        --button-highlight-bg: #f39c12; /* Amarelo ouro */
         --button-highlight-border: #e08e0b;
         --button-highlight-text: white;
 
-        --table-header-bg: #34495e; 
+        --table-header-bg: #34495e; /* Azul marinho cabeçalho */
         --table-header-text: white;
         
-        --badge-success-bg: #2ecc71; 
+        --badge-success-bg: #2ecc71; /* Verde esmeralda */
         --badge-danger-bg: #e74c3c; 
         --badge-secondary-bg: #95a5a6; 
         
         --input-bg: white;
-        --input-border: #dcdcdc; 
-        --input-text-addon-bg: #f5f5f5; 
-        --input-text-addon-border: #dcdcdc;
+        --input-border: #c3d2e0; 
+        --input-text-addon-bg: #eef2f6; 
+        --input-text-addon-border: #c3d2e0;
         
         --copy-btn-color: #3498db;
-        --info-badge-bg: #3498db; 
+        --info-badge-bg: #4a627a; 
         --info-link-color: #3498db;
         
         /* Cores do Toggle Switch - CLARO */
-        --toggle-bg-off: #ccc;
-        --toggle-circle-off: #f4f4f4;
-        --toggle-bg-on: #2ecc71; 
-        --toggle-circle-on: #f4f4f4;
-        --toggle-icon-color-off: #555; 
-        --toggle-icon-color-on: #fff; 
+        --toggle-bg-off: #b0c4de; 
+        --toggle-circle-off: #ffffff; 
+        --toggle-bg-on: #25a0e0; 
+        --toggle-circle-on: #ffffff;
+        --toggle-icon-color-off: #4a627a; 
+        --toggle-icon-color-on: #ffffff; 
     }
 
-    /* Variáveis CSS para o tema escuro */
+    /* Variáveis CSS para o Tema Escuro: Profundo e com contrastes de alta tecnologia */
     .dark-theme {
         --body-bg-start: #1a1a2e; 
-        --body-bg-end: #16213e;   
-        --card-bg: #222831; 
-        --text-color-primary: #ececec; 
-        --text-color-secondary: #aaaaaa; 
-        --heading-color: #ececec;
+        --body-bg-end: #121820;   
+        --card-bg: #1f2a38; 
+        --text-color-primary: #e0e6ed; 
+        --text-color-secondary: #a7b7c9; 
+        --heading-color: #e0e6ed;
         
-        --button-primary-bg: #3498db; 
-        --button-primary-border: #2980b9;
+        --button-primary-bg: #287bff; 
+        --button-primary-border: #216ad0;
         --button-primary-text: white;
         
         --button-secondary-bg: #c0392b; 
-        --button-secondary-border: #c0392b;
+        --button-secondary-border: #a02c21;
         --button-secondary-text: white;
         
-        --button-highlight-bg: #f1c40f; 
-        --button-highlight-border: #f39c12;
-        --button-highlight-text: #222831; 
+        --button-highlight-bg: #f0c23e; 
+        --button-highlight-border: #d0a530;
+        --button-highlight-text: #1a1a2e; 
 
-        --table-header-bg: #1a202c; 
-        --table-header-text: #ececec;
+        --table-header-bg: #1e2e3f; 
+        --table-header-text: #e0e6ed;
         
-        --badge-success-bg: #27ae60;
+        --badge-success-bg: #2ecc71;
         --badge-danger-bg: #e74c3c;
         --badge-secondary-bg: #7f8c8d;
         
-        --input-bg: #393e46; 
-        --input-border: #4d545e;
-        --input-text-addon-bg: #4a545e;
-        --input-text-addon-border: #5a758e;
+        --input-bg: #2f3b49; 
+        --input-border: #4a5c6f;
+        --input-text-addon-bg: #3a4b5d;
+        --input-text-addon-border: #4a5c6f;
         
-        --copy-btn-color: #85c1e9;
-        --info-badge-bg: #4a545e;
-        --info-link-color: #85c1e9;
+        --copy-btn-color: #79c1f0;
+        --info-badge-bg: #3a4b5d;
+        --info-link-color: #79c1f0;
 
         /* Cores do Toggle Switch - ESCURO */
-        --toggle-bg-off: #555;
-        --toggle-circle-off: #f4f4f4;
-        --toggle-bg-on: #3498db; 
-        --toggle-circle-on: #f4f4f4;
-        --toggle-icon-color-off: #fff; 
-        --toggle-icon-color-on: #fff; 
+        --toggle-bg-off: #556c88; 
+        --toggle-circle-off: #e0e6ed;
+        --toggle-bg-on: #287bff; 
+        --toggle-circle-on: #e0e6ed;
+        --toggle-icon-color-off: #e0e6ed; 
+        --toggle-icon-color-on: #ffffff; 
     }
 
+    /* Estilos Globais do Corpo e Container Principal */
     body {
       background: linear-gradient(to right, var(--body-bg-start), var(--body-bg-end)) !important; 
       font-family: 'Poppins', sans-serif !important; 
@@ -113,123 +114,152 @@
       min-height: 100vh;
       padding: 0;
       color: var(--text-color-primary) !important; 
+      transition: background-color 0.5s ease; /* Transição para o fundo do body */
     }
     .container-custom {
         background-color: var(--card-bg) !important;
-        border-radius: 1rem !important;
-        box-shadow: 0 12px 25px rgba(0,0,0,0.2) !important; 
-        padding: 2.5rem !important; 
+        border-radius: 1.25rem !important; /* Mais arredondado */
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important; /* Sombra mais suave e espalhada */
+        padding: 3rem !important; /* Mais padding para respiro */
         width: 95% !important;
-        margin: 2rem auto !important;
-        max-width: 960px !important;
+        margin: 2.5rem auto !important; /* Mais margem top/bottom */
+        max-width: 1000px !important; 
+        position: relative; 
+        overflow: hidden; 
+        transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Transição para o card */
     }
+    
+    /* Estilos do Título Principal (Aposta Sem Risco) */
     h1 {
-      font-family: 'Montserrat', sans-serif !important; 
+      font-family: 'Montserrat', sans-serif !important; /* Título: Montserrat */
       color: var(--heading-color) !important; 
       font-weight: 700 !important; 
-      margin-bottom: 2rem !important; 
+      margin-bottom: 2.5rem !important; 
+      letter-spacing: 0.05em; 
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Sombra mais sutil */
     }
+
+    /* Estilos da Logo */
     .logo-display { 
         text-align: center;
-        margin-bottom: 1.5rem; 
+        margin-bottom: 2rem; 
     }
     .logo-display img {
         max-width: 100%;
         height: auto;
-        max-height: 120px; 
+        max-height: 220px; /* Logo maior */ 
         display: inline-block; 
         margin: 0 auto; 
+        filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1)); /* Sombra mais pronunciada para a logo */
     }
 
+    /* Estilos para Lucro e Retorno (Badges Globais) */
     #lucroDisplay, #retornoTotalDisplay {
-        font-size: 1.1rem !important; 
+        font-size: 1.25rem !important; /* Texto maior */
         font-weight: 700 !important; 
-        padding: 0.6rem 1rem !important; 
-        border-radius: 0.5rem !important; 
+        padding: 0.8rem 1.5rem !important; /* Padding maior */
+        border-radius: 0.8rem !important; /* Mais arredondado */
         display: inline-block !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra mais forte */
+        min-width: 120px; /* Garante que os badges tenham uma largura mínima */
+        text-align: center;
     }
-    #lucroDisplay.bg-success-custom {
-        background-color: var(--badge-success-bg) !important; 
-        color: white !important;
-    }
-    #lucroDisplay.bg-danger-custom {
-        background-color: var(--badge-danger-bg) !important; 
-        color: white !important;
-    }
-    #retornoTotalDisplay.bg-secondary-custom {
-        background-color: var(--badge-secondary-bg) !important;
-        color: white !important;
-    }
+    #lucroDisplay.bg-success-custom { background-color: var(--badge-success-bg) !important; color: white !important; }
+    #lucroDisplay.bg-danger-custom { background-color: var(--badge-danger-bg) !important; color: white !important; }
+    #retornoTotalDisplay.bg-secondary-custom { background-color: var(--badge-secondary-bg) !important; color: white !important; }
+
+    /* Estilos da Tabela */
     .table-dark th {
         background-color: var(--table-header-bg) !important; 
         color: var(--table-header-text) !important;
         text-align: center !important;
-        padding: 0.8rem !important; 
+        padding: 1.2rem !important; /* Padding maior */
+        border-bottom: 2px solid rgba(255,255,255,0.15) !important; /* Linha mais visível */
+        font-weight: 600 !important;
     }
-    .table-responsive {
-        margin-top: 1.5rem !important; 
-    }
+    .table-responsive { margin-top: 2.5rem !important; }
+    
+    /* Estilos dos Inputs (Campos de Odd e Investimento) */
     .input-group-text {
         background-color: var(--input-text-addon-bg) !important;
         border: 1px solid var(--input-text-addon-border) !important;
         color: var(--text-color-primary) !important; 
-        border-radius: 0.5rem 0 0 0.5rem !important; 
+        border-radius: 0.6rem 0 0 0.6rem !important; 
+        padding: 0.75rem 1.2rem !important; /* Padding maior */
+        font-weight: 500;
     }
     .form-control { 
         background-color: var(--input-bg) !important;
         border: 1px solid var(--input-border) !important;
         color: var(--text-color-primary) !important; 
-        border-radius: 0 0.5rem 0.5rem 0 !important; 
-        padding: 0.75rem 1rem !important; 
+        border-radius: 0 0.6rem 0.6rem 0 !important; 
+        padding: 0.75rem 1.2rem !important; /* Padding maior */
+        box-shadow: inset 0 1px 4px rgba(0,0,0,0.08); /* Sombra interna mais suave */
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    .odd-input {
-        text-align: center !important;
+    .form-control:focus {
+        border-color: var(--button-primary-bg) !important; 
+        box-shadow: 0 0 0 0.2rem rgba(var(--button-primary-bg),.25) !important; 
+        outline: none; /* Remove o outline padrão */
     }
+    .odd-input { text-align: center !important; }
+
+    /* Badges de Investimento/Retorno na Tabela */
     .badge-secondary-custom {
         background-color: var(--badge-secondary-bg) !important; 
         color: var(--text-color-primary) !important; 
-        padding: 0.5em 0.8em !important; 
-        border-radius: 0.3rem !important;
+        padding: 0.6em 1.2em !important; /* Mais padding */
+        border-radius: 0.4rem !important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08); 
+        font-weight: 600 !important;
+        min-width: 80px; /* Largura mínima para alinhamento */
+        text-align: center;
     }
+
+    /* Botão Copiar */
     .copy-btn {
-        margin-left: 8px !important; 
+        margin-left: 10px !important; /* Mais espaço */
         text-decoration: none !important;
-        font-weight: 500 !important; 
-        font-size: 0.8rem !important; 
+        font-weight: 600 !important; /* Mais bold */
+        font-size: 0.9rem !important; /* Um pouco maior */
         color: var(--copy-btn-color) !important;
-        transition: color 0.2s ease;
+        transition: color 0.3s ease;
     }
     .copy-btn:hover {
         color: var(--button-primary-bg) !important; 
+        text-decoration: underline !important;
     }
+
+    /* Botões de Ação (Adicionar, Reiniciar) */
     .btn-primary { 
         background-color: var(--button-primary-bg) !important; 
         border-color: var(--button-primary-border) !important;
         color: var(--button-primary-text) !important;
         font-weight: 600 !important; 
-        padding: 0.75rem 1.5rem !important; 
-        border-radius: 0.5rem !important;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1); 
-        transition: all 0.3s ease;
+        padding: 0.9rem 2rem !important; /* Padding maior */
+        border-radius: 0.6rem !important;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.18); /* Sombra mais forte */
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição com cubic-bezier para suavidade */
     }
     .btn-primary:hover {
-        transform: translateY(-2px); 
-        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        transform: translateY(-4px); /* Efeito de elevação maior */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
     .btn-warning-custom {
         background-color: var(--button-secondary-bg) !important; 
         color: var(--button-secondary-text) !important; 
         font-weight: 600 !important; 
-        padding: 0.75rem 1.5rem !important; 
-        border-radius: 0.5rem !important;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
+        padding: 0.9rem 2rem !important; 
+        border-radius: 0.6rem !important;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     .btn-warning-custom:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
+
+    /* Conteúdo das Células da Tabela (Alinhamento) */
     .value-cell-content {
         display: flex !important;
         align-items: center !important;
@@ -238,40 +268,55 @@
         padding: 0 !important;
     }
     .value-cell-content .badge {
-        margin-right: 5px !important;
+        margin-right: 8px !important; /* Mais espaço */
+    }
+
+    /* Seções Informativas */
+    .info-section {
+        margin-top: 4rem !important; /* Mais espaço */
+        padding-top: 2rem; /* Padding interno */
+        border-top: 1px solid rgba(var(--text-color-primary), 0.1); /* Separador sutil */
     }
     .info-section h5 .badge {
         background-color: var(--info-badge-bg) !important; 
         color: white !important;
-        padding: 0.5rem 1rem !important;
-        border-radius: 1.5rem !important; 
-        font-size: 1rem !important;
-        font-weight: 600 !important;
-        margin-bottom: 1rem; 
+        padding: 0.6rem 1.5rem !important; /* Mais padding e pílula */
+        border-radius: 2rem !important; 
+        font-size: 1.1rem !important; 
+        font-weight: 700 !important;
+        margin-bottom: 1.5rem; /* Mais espaço */
         display: inline-block; 
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Sombra nos badges de seção */
     }
     .info-section p {
-        margin-bottom: 0.8rem !important; 
+        margin-bottom: 1.2rem !important; 
         color: var(--text-color-secondary) !important; 
-        line-height: 1.6; 
+        line-height: 1.8; /* Mais espaçamento para leitura */
+        font-size: 1rem; 
     }
     .info-section a {
         color: var(--info-link-color) !important; 
-        font-weight: 500 !important;
+        font-weight: 600 !important; 
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .info-section a:hover {
+        color: var(--button-primary-bg) !important;
+        text-decoration: underline;
     }
 
-    /* ESTILOS DO TOGGLE SWITCH */
+    /* Estilos do Toggle Switch */
     .theme-toggle-container {
         position: absolute;
-        top: 20px; 
-        right: 20px; 
+        top: 30px; 
+        right: 30px; 
         z-index: 10;
     }
     .theme-toggle-switch {
         position: relative;
         display: inline-block;
-        width: 60px; 
-        height: 34px; 
+        width: 65px; 
+        height: 38px; 
     }
     .theme-toggle-switch input {
         opacity: 0;
@@ -286,23 +331,21 @@
         right: 0;
         bottom: 0;
         background-color: var(--toggle-bg-off); 
-        -webkit-transition: .4s;
-        transition: .4s;
-        border-radius: 34px; 
-        box-shadow: inset 0 0 5px rgba(0,0,0,0.2); 
+        transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border-radius: 38px; 
+        box-shadow: inset 0 0 8px rgba(0,0,0,0.3); /* Sombra interna mais forte */
     }
     .slider:before {
         position: absolute;
         content: "";
-        height: 26px; 
-        width: 26px;
+        height: 30px; 
+        width: 30px;
         left: 4px;
         bottom: 4px;
         background-color: var(--toggle-circle-off); 
-        -webkit-transition: .4s;
-        transition: .4s;
+        transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
         border-radius: 50%; 
-        box-shadow: 0 2px 3px rgba(0,0,0,0.2); 
+        box-shadow: 0 3px 6px rgba(0,0,0,0.25); /* Sombra no círculo */
     }
     .theme-toggle-switch input:checked + .slider {
         background-color: var(--toggle-bg-on); 
@@ -311,19 +354,18 @@
         box-shadow: 0 0 1px var(--toggle-bg-on);
     }
     .theme-toggle-switch input:checked + .slider:before {
-        -webkit-transform: translateX(26px); 
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
+        transform: translateX(27px); 
         background-color: var(--toggle-circle-on); 
     }
-    /* Ícones dentro do slider */
+    /* Ícones dentro do slider (Aprimorados) */
     .slider .icon-sun, .slider .icon-moon {
         position: absolute;
-        font-size: 16px; 
-        line-height: 34px; 
-        transition: opacity 0.4s ease, transform 0.4s ease;
+        font-size: 18px; 
+        line-height: 38px; 
+        transition: all 0.4s ease-in-out; /* Transição para todas as propriedades */
         opacity: 0; 
         font-weight: 900; 
+        text-shadow: 0 0 2px rgba(0,0,0,0.2); /* Pequena sombra no ícone */
     }
     .slider .icon-moon { 
         left: 8px; 
@@ -337,30 +379,31 @@
     }
     .theme-toggle-switch input:checked + .slider .icon-moon {
         opacity: 0; 
-        transform: translateX(-5px); 
+        transform: translateX(-15px) scale(0.8); /* Esconde e encolhe */
     }
     .theme-toggle-switch input:checked + .slider .icon-sun {
         opacity: 1; 
-        transform: translateX(0); 
+        transform: translateX(0) scale(1); /* Mostra e volta ao tamanho normal */
     }
 
-
-    /* Ajustes para telas menores */
+    /* Ajustes de Responsividade (Media Queries) */
     @media (max-width: 768px) { 
         .container-custom {
-            width: 95% !important;
-            padding: 1rem !important;
-            margin: 1rem auto !important;
+            padding: 1.5rem !important; 
+            margin: 1.5rem auto !important;
         }
         h1 {
             font-size: 2rem !important; 
+            margin-bottom: 1.5rem !important;
         }
         .logo-display img {
             max-height: 100px; 
+            margin-bottom: 1rem !important;
         }
         #lucroDisplay, #retornoTotalDisplay {
-            font-size: 1rem !important; 
-            padding: 0.4rem 0.6rem !important;
+            font-size: 0.95rem !important; 
+            padding: 0.5rem 0.8rem !important;
+            min-width: 90px;
         }
         .input-group-text, .form-control {
             padding: 0.6rem 0.8rem !important; 
@@ -369,48 +412,71 @@
             display: none !important; 
         }
         .theme-toggle-container { 
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
         }
         .theme-toggle-switch { 
-            width: 50px; 
-            height: 28px;
+            width: 55px; 
+            height: 30px;
         }
         .slider:before {
-            height: 20px;
-            width: 20px;
+            height: 22px;
+            width: 22px;
             left: 4px;
             bottom: 4px;
         }
         .theme-toggle-switch input:checked + .slider:before {
-            transform: translateX(22px); 
+            transform: translateX(21px); 
         }
         .slider .icon-sun, .slider .icon-moon {
-            font-size: 14px; 
-            line-height: 28px;
+            font-size: 15px; 
+            line-height: 30px;
         }
-        /* Ajuste para alinhar Lucro/Retorno em mobile */
         .row.mobile-align-center {
-            flex-direction: column; /* Coloca um abaixo do outro em mobile */
-            gap: 10px; /* Espaço entre eles */
+            flex-direction: row; 
+            flex-wrap: nowrap;
+            justify-content: space-around; 
+            align-items: center; 
+            padding: 0; 
+            margin: 0; /* Remove margem negativa */
         }
         .row.mobile-align-center > div {
-            flex: none; /* Remove flex-1 */
-            max-width: 100%; /* Ocupa largura total */
-            text-align: center; 
+            flex-basis: auto; 
+            max-width: none; 
+            padding: 0 5px; 
         }
         .row.mobile-align-center strong {
-            display: inline; /* Mantém na mesma linha que o valor */
-            margin-right: 5px; /* Espaço entre o texto e o badge */
+            display: block; 
+            font-size: 0.85rem; 
+            margin-bottom: 2px;
+            white-space: nowrap; 
+        }
+        .info-section {
+            margin-top: 2rem !important;
+            padding-top: 1.5rem;
+        }
+        .info-section h5 .badge {
+            font-size: 0.95rem !important;
+            padding: 0.5rem 1rem !important;
+            margin-bottom: 1rem;
+        }
+        .info-section p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.6rem !important;
+        }
+        .copy-btn {
+            margin-left: 5px !important;
+            font-size: 0.7rem !important;
         }
     }
     @media (max-width: 576px) { 
         .container-custom {
-            padding: 0.75rem !important;
+            padding: 1rem !important;
         }
         .info-section h5 .badge {
-            font-size: 0.9rem !important; 
-            padding: 0.4rem 0.8rem !important;
+            font-size: 0.85rem !important; 
+            padding: 0.3rem 0.8rem !important;
         }
         .btn-primary, .btn-warning-custom {
             padding: 0.6rem 1rem !important; 
@@ -517,19 +583,14 @@
     // Limpa valor de MOEDA (Investimento) para cálculo
     // Remove R$, espaços, PONTOS DE MILHAR, e substitui vírgula por ponto decimal.
     function cleanCurrencyValue(value) {
-      // **AQUI ESTÁ A CHAVE DA CORREÇÃO:**
-      // Verifica se a string contém uma vírgula.
-      // Se tiver vírgula, assume que ela é o separador decimal e remove apenas os pontos (separadores de milhar).
-      // Se NÃO tiver vírgula, assume que o ponto é o separador decimal e não o remove.
       if (String(value).includes(',')) {
           return String(value)
-              .replace(/[R$ ]/g, '')   // Remove R$ e espaços
+              .replace(/[R$ ]/g, '')
               .replace(/\./g, '')     // Remove PONTOS DE MILHAR
               .replace(/,/g, '.');    // Substitui VÍRGULA por PONTO DECIMAL
       } else {
           return String(value)
-              .replace(/[R$ ]/g, '');   // Remove R$ e espaços
-              // NÃO REMOVE PONTOS AQUI, pois podem ser decimais (ex: 10.20)
+              .replace(/[R$ ]/g, '');   // NÃO REMOVE PONTOS AQUI (assume que é decimal se não tem vírgula)
       }
     }
 
@@ -560,13 +621,11 @@
 
     // --- Funções de tratamento de input para Valor Total ---
     function handleStakeInput(inputElement) {
-      // No keyup, apenas substitui vírgula por ponto no próprio input para facilitar a digitação
       inputElement.value = inputElement.value.replace(",", ".");
       calcularDutching();
     }
 
     function formatStakeOnBlur(inputElement) {
-        // Usa cleanCurrencyValue para formatar o valor de investimento para o cálculo
         let value = cleanCurrencyValue(inputElement.value);
         let parsedValue = parseFloat(value);
 
